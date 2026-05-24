@@ -4,25 +4,32 @@ import "./HobbyForm.css";
 const HobbyForm = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredDescription, setEnteredDescription] = useState("");
-  const [isValid, setIsValid] = useState(true);
+  const [isNameValid, setIsNameValid] = useState(true);
+  const [isDescriptionValid, setIsDescriptionValid] = useState(true);
 
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
+    if (event.target.value.trim() !== "") {
+      setIsNameValid(true);
+    }
   };
 
   const descriptionChangeHandler = (event) => {
     setEnteredDescription(event.target.value);
+    if (event.target.value.trim() !== "") {
+      setIsDescriptionValid(true);
+    }
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
     if (enteredName.trim() === "" || enteredDescription.trim() === "") {
-      setIsValid(false);
+      if (enteredName.trim() === "") setIsNameValid(false);
+      if (enteredDescription.trim() === "") setIsDescriptionValid(false);
+
       return;
     }
-
-    setIsValid(true);
 
     const hobbyData = {
       name: enteredName,
@@ -39,11 +46,13 @@ const HobbyForm = (props) => {
   return (
     <form onSubmit={submitHandler}>
       <div className="hobby-form__controls">
-        <div className={`hobby-form__control ${!isValid ? "invalid" : ""}`}>
+        <div className={`hobby-form__control ${!isNameValid ? "invalid" : ""}`}>
           <label>Hobby Name</label>
           <input type="text" value={enteredName} onChange={nameChangeHandler} />
         </div>
-        <div className={`hobby-form__control ${!isValid ? "invalid" : ""}`}>
+        <div
+          className={`hobby-form__control ${!isDescriptionValid ? "invalid" : ""}`}
+        >
           <label>Description</label>
           <input
             type="text"
