@@ -1,0 +1,25 @@
+.new-hobby {
+  background-color: #4b4b4b;
+  padding: 1rem;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  border: 2px solid orange;
+}
+
+.new-hobby button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid orange;
+  background-color: #4b4b4b;
+  color: white;
+  border-radius: 12px;
+}
+
+.new-hobby button:hover {
+  background-color: #510674;
+  border-color: #510674;
+}

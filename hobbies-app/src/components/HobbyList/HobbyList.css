@@ -1,0 +1,8 @@
+.hobby-list {
+  padding: 1rem;
+  background-color: #3a3a3a;
+  width: 50rem;
+  max-width: 95%;
+  border: 2px solid orange;
+  border-radius: 12px;
+}

@@ -1,0 +1,35 @@
+.hobby-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  background-color: #4b4b4b;
+  border: 2px solid orange;
+  border-radius: 12px;
+}
+
+.hobby-item__content h2 {
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.hobby-item__content p {
+  color: #ccc;
+  margin: 0;
+}
+
+.hobby-item button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ff4444;
+  background-color: #ff4444;
+  color: white;
+  border-radius: 8px;
+}
+
+.hobby-item button:hover {
+  background-color: #cc0000;
+  border-color: #cc0000;
+}
